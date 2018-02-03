@@ -1,4 +1,4 @@
-# Azurite
+# Azurite projet
 
 # Requirements : 64bit Ubuntu ARM base system with ARM cortex a-53
 
