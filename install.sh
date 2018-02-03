@@ -1,5 +1,5 @@
 #!bin/bash
-stty -echo
+
 
 echo "NODE"
 
