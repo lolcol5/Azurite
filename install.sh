@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 echo "Node"
@@ -43,11 +42,3 @@ echo "3/3"
 cd $HOME/Azurite/DATA/cpuminer-multi
 sudo ./configure --disable-assembly CFLAGS="-Ofast -march=native" --with-crypto --with-curl
 echo "***CONFIGURE Complete***"
-
-
-
-
-
-
-
-
