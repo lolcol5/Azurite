@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Node"
+echo "Node vs 1.0"
 echo "***Update***"
 sudo apt-get update -y
 sudo apt-get upgrade -y
@@ -25,7 +25,7 @@ echo "2/3"
 cd $HOME/AzuriteMINER/DATA/veriumMiner
 sudo ./autogen.sh
 echo "3/3"
-cd $HOME/Azurite/MINERDATA/cpuminer-multi
+cd $HOME/AzuriteMINER/DATA/cpuminer-multi
 sudo ./autogen.sh
 echo "***AUTOGEN Complete***"
 
@@ -33,8 +33,9 @@ echo "***CONFIGURE***"
 echo "1/3"
 cd $HOME/AzuriteMINER/DATA/m-cpuminer-v2
 sudo CFLAG="-O2 mfpu=neon-vfpv4" ./configure
-
-
+cp $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2
+sudo rm $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
+sed 's/-march=native/mcpu=cortex-a53/g' $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2 >Makefile
 
 
 echo "2/3"
