@@ -1,5 +1,5 @@
 #!/bin/bash
-cls
+clear
 echo "Node vs 1.0"
 echo "***Update***"
 sudo apt-get update -y
@@ -38,7 +38,6 @@ sudo CFLAG="-O2 mfpu=neon-vfpv4" ./configure
 sudo cp $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2
 sudo cp $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2 $HOME/a
 sudo rm $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
-#sudo sed -i 's/-march=native/mcpu=cortex-a53/g' $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2 >$HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
 sudo sed -i 's/-march=native/mcpu=cortex-a53/g' $HOME/a
 sudo cp $HOME/a $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
 sudo rm $HOME/a
@@ -55,4 +54,21 @@ cd $HOME/AzuriteMINER/DATA/cpuminer-multi
 sudo ./configure --disable-assembly CFLAGS="-Ofast -march=native" --with-crypto --with-curl
 echo "***CONFIGURE Complete***"
 
+echo "***MAKE***"
+
+echo "1/3"
+cd $HOME/AzuriteMINER/DATA/m-cpuminer-v2
+sudo make -j4
+
+
+echo "2/3"
+cd $HOME/AzuriteMINER/DATA/veriumMiner
+make -j4
+
+echo "3/3"
+cd $HOME/AzuriteMINER/DATA/cpuminer-multi
+sudo make -j4
+
+
+echo "***MAKE Complete***"
 
