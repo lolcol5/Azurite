@@ -34,8 +34,15 @@ echo "1/3"
 cd $HOME/AzuriteMINER/DATA/m-cpuminer-v2
 sudo CFLAG="-O2 mfpu=neon-vfpv4" ./configure
 sudo cp $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2
+sudo cp $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2 $HOME/a
 sudo rm $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
-sudo sed 's/-march=native/mcpu=cortex-a53/g' $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2 >Makefile
+#sudo sed -i 's/-march=native/mcpu=cortex-a53/g' $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2 >$HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
+sudo sed -i 's/-march=native/mcpu=cortex-a53/g' $HOME/a > $HOME/b
+sudo cp $HOME/b $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
+sudo rm $HOME/a
+sudo rm $HOME/b
+
+
 
 
 echo "2/3"
