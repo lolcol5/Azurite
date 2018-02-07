@@ -11,7 +11,7 @@ sudo apt-get install git -y
 sudo mkdir $HOME/AzuriteMINER
 sudo mkdir $HOME/AzuriteMINER/DATA
 sudo mkdir $HOME/AzuriteMINER/TEMP
-cd $HOME/Azurite/DATA
+cd $HOME/AzuriteMINER/DATA
 
 echo "***Download Miner***"
 sudo git clone https://github.com/magi-project/m-cpuminer-v2
