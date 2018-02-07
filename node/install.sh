@@ -19,29 +19,29 @@ sudo git clone https://github.com/fireworm71/veriumMiner
 sudo git clone https://github.com/tpruvot/cpuminer-multi
 echo "***AUTOGEN***"
 echo "1/3"
-cd $HOME/Azurite/DATA/m-cpuminer-v2
+cd $HOME/AzuriteMINER/DATA/m-cpuminer-v2
 sudo ./autogen.sh
 echo "2/3"
-cd $HOME/Azurite/DATA/veriumMiner
+cd $HOME/AzuriteMINER/DATA/veriumMiner
 sudo ./autogen.sh
 echo "3/3"
-cd $HOME/Azurite/DATA/cpuminer-multi
+cd $HOME/Azurite/MINERDATA/cpuminer-multi
 sudo ./autogen.sh
 echo "***AUTOGEN Complete***"
 
 echo "***CONFIGURE***"
 echo "1/3"
-cd $HOME/Azurite/DATA/m-cpuminer-v2
+cd $HOME/AzuriteMINER/DATA/m-cpuminer-v2
 sudo CFLAG="-O2 mfpu=neon-vfpv4" ./configure
 
 
 
 
 echo "2/3"
-cd $HOME/Azurite/DATA/veriumMiner
+cd $HOME/AzuriteMINER/DATA/veriumMiner
 sudo ./configure CFLAGS= --with-crypto --with-curl
 echo "3/3"
-cd $HOME/Azurite/DATA/cpuminer-multi
+cd $HOME/AzuriteMINER/DATA/cpuminer-multi
 sudo ./configure --disable-assembly CFLAGS="-Ofast -march=native" --with-crypto --with-curl
 echo "***CONFIGURE Complete***"
 
