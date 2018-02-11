@@ -1,4 +1,4 @@
-from fabric.ap1 import *
+from fabric.api import *
 
 env.hosts = [
 
