@@ -9,7 +9,7 @@ sudo apt-get upgrade -y
 echo "***Download Software***"
 sudo apt-get install python-pip 
 sudo pip install --upgrade pip
-sudo pip install fabric -y
+sudo pip install fabric
 sudo apt-get install vsftpd -y
 
 echo "***Setting FTP server***"
