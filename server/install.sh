@@ -7,7 +7,7 @@ sudo apt-get upgrade -y
 
 
 echo "***Download Software***"
-sudo apt-get intall python-pip -y
+sudo apt-get install python-pip 
 sudo pip install --upgrade pip
 sudo pip install fabric -y
 sudo apt install vsftpd -y
