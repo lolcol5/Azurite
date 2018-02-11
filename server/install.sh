@@ -10,7 +10,7 @@ echo "***Download Software***"
 sudo apt-get install python-pip 
 sudo pip install --upgrade pip
 sudo pip install fabric -y
-sudo apt install vsftpd -y
+sudo apt-get install vsftpd -y
 
 echo "***Setting FTP server***"
 sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.old
