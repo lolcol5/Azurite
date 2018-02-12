@@ -7,7 +7,7 @@ sudo apt-get upgrade -y
 
 echo "***Download Software***"
 sudo apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ git libgmp-dev$
-sudo apt-get install git -y
+
 sudo mkdir $HOME/AzuriteMINER
 sudo mkdir $HOME/AzuriteMINER/DATA
 sudo mkdir $HOME/AzuriteMINER/TEMP
@@ -60,7 +60,6 @@ echo "1/3"
 cd $HOME/AzuriteMINER/DATA/m-cpuminer-v2
 sudo make -j4
 
-
 echo "2/3"
 cd $HOME/AzuriteMINER/DATA/veriumMiner
 make -j4
@@ -68,7 +67,21 @@ make -j4
 echo "3/3"
 cd $HOME/AzuriteMINER/DATA/cpuminer-multi
 sudo make -j4
-
-
 echo "***MAKE Complete***"
 
+
+echo "***Azurite CORE***"
+sudo cp /$HOME/Azurite/Node/AzuriteCORE.sh /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh
+sudo chmod +x /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh
+sudo cp /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh $HOME/AzuriteMINER/TEMP/AzuriteCORE.sh.old
+sudo cp /etc/rc.local $HOME/AzuriteMINER/TEMP/rc.local.old
+sudo cp $HOME/AzuriteMINER/TEMP/rc.local.old /$HOME/c
+sudo sed -i 's/exit 0/AzuriteCORE/g' $HOME/c
+echo "#AzuriteCORE" >> /$HOME/c
+echo "exec /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh" >> /$HOME/c
+sudo sed -i 's/AzuriteCORE/exit 0/g' $HOME/c
+sudo rm $HOME/c
+
+
+echo "***Azurite CORE Complete***"
+echo "***END***"
