@@ -1,5 +1,8 @@
 #!/bin/bash
 clear
+#NodeUser== Username of the node
+NodeUser="fa"
+
 echo "Server vs 1.0"
 echo "***Update***"
 sudo apt-get update -y
@@ -25,8 +28,8 @@ sudo rm $HOME/a
 echo "***Setting Node***"
 fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo apt-get install git -y"
 fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo git clone https://github.com/lolcol5/Azurite.git"
-fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo chmod +x $HOME/Azurite/Node/install.sh"
-fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo $HOME/Azurite/Node/./install.sh"
+fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo chmod +x $NodeUser/Azurite/Node/install.sh"
+fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo $NodeUser/Azurite/Node/./install.sh"
 
 echo "***Setting AzuriteSERVER***"
 sudo cp $HOME/Azurite/node/AzuriteCORE.sh $HOME/AzuriteCORE.sh
