@@ -28,8 +28,8 @@ sudo rm $HOME/a
 echo "***Setting Node***"
 fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo apt-get install git -y"
 fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo git clone https://github.com/lolcol5/Azurite.git"
-fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo chmod +x $NodeUser/Azurite/Node/install.sh"
-fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo $NodeUser/Azurite/Node/./install.sh"
+fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo chmod +x $NodeUser/Azurite/node/install.sh"
+fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo $NodeUser/Azurite/node/./install.sh"
 
 echo "***Setting AzuriteSERVER***"
 sudo cp $HOME/Azurite/node/AzuriteCORE.sh $HOME/AzuriteCORE.sh
