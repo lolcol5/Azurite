@@ -23,10 +23,10 @@ sudo cp $HOME/a /etc/vsftpd.conf
 sudo rm $HOME/a
 
 echo "***Setting Node***"
-fab cmd:"sudo apt-get install git -y"
-fab cmd:"sudo git clone https://github.com/lolcol5/Azurite.git"
-fab cmd:"sudo chmod +x $HOME/Azurite/Node/install.sh"
-fab cmd:"sudo $HOME/Azurite/Node/./install.sh"
+fab -f /$HOME/server cmd:"sudo apt-get install git -y"
+fab -f /$HOME/server cmd:"sudo git clone https://github.com/lolcol5/Azurite.git"
+fab -f /$HOME/server cmd:"sudo chmod +x $HOME/Azurite/Node/install.sh"
+fab -f /$HOME/server cmd:"sudo $HOME/Azurite/Node/./install.sh"
 
 echo "***Setting AzuriteSERVER***"
 sudo cp $HOME/Azurite/Node/AzuriteCORE.sh $HOME/AzuriteCORE.sh
