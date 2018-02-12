@@ -71,14 +71,14 @@ echo "***MAKE Complete***"
 
 
 echo "***Azurite CORE***"
-sudo cp /$HOME/Azurite/Node/AzuriteCORE.sh /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh
-sudo chmod +x /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh
-sudo cp /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh $HOME/AzuriteMINER/TEMP/AzuriteCORE.sh.old
+sudo cp $HOME/Azurite/Node/AzuriteCORE.sh $HOME/AzuriteMINER/DATA/AzuriteCORE.sh
+sudo chmod +x $HOME/AzuriteMINER/DATA/AzuriteCORE.sh
+sudo cp $HOME/AzuriteMINER/DATA/AzuriteCORE.sh $HOME/AzuriteMINER/TEMP/AzuriteCORE.sh.old
 sudo cp /etc/rc.local $HOME/AzuriteMINER/TEMP/rc.local.old
-sudo cp $HOME/AzuriteMINER/TEMP/rc.local.old /$HOME/c
+sudo cp $HOME/AzuriteMINER/TEMP/rc.local.old $HOME/c
 sudo sed -i 's/exit 0/AzuriteCORE/g' $HOME/c
-echo "#AzuriteCORE" >> /$HOME/c
-echo "exec /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh" >> /$HOME/c
+echo "#AzuriteCORE" >> $HOME/c
+echo "exec /$HOME/AzuriteMINER/DATA/AzuriteCORE.sh" >> $HOME/c
 sudo sed -i 's/AzuriteCORE/exit 0/g' $HOME/c
 sudo rm $HOME/c
 
