@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 #NodeUser== Username of the node
-NodeUser="fa"
+NodeUser="home/fa"
 
 echo "Server vs 1.0"
 echo "***Update***"
