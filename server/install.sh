@@ -34,8 +34,8 @@ fab -f $HOME/Azurite/server/fabfile.py cmd:"sudo $NodeUser/Azurite/Node/./instal
 echo "***Setting AzuriteSERVER***"
 sudo cp $HOME/Azurite/node/AzuriteCORE.sh $HOME/AzuriteCORE.sh
 sudo chmod +x $HOME/AzuriteCORE.sh
-sudo chmod +x $HOME/updateAzuriteNODE.sh
 echo "#!/bin/bash" > $HOME/updateAzuriteNODE.sh
 echo "#____updateAzuriteNODE____"  >> $HOME/updateAzuriteNODE.sh
 echo "" >> $HOME/updateAzuriteNODE.sh
+sudo chmod +x $HOME/updateAzuriteNODE.sh
 
