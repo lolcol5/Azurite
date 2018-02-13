@@ -38,7 +38,7 @@ sudo CFLAG="-O2 mfpu=neon-vfpv4" ./configure
 sudo cp $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2
 sudo cp $HOME/AzuriteMINER/TEMP/Makefile.old.m-cpuminer-v2 $HOME/a
 sudo rm $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
-sudo sed -i 's/-march=native/mcpu=cortex-a53/g' $HOME/a
+sudo sed -i 's/-march=native/-mcpu=cortex-a53/g' $HOME/a
 sudo cp $HOME/a $HOME/AzuriteMINER/DATA/m-cpuminer-v2/Makefile
 sudo rm $HOME/a
 
@@ -71,7 +71,7 @@ echo "***MAKE Complete***"
 
 
 echo "***Azurite CORE***"
-sudo cp $HOME/Azurite/Node/AzuriteCORE.sh $HOME/AzuriteMINER/DATA/AzuriteCORE.sh
+sudo cp $HOME/Azurite/node/AzuriteCORE.sh $HOME/AzuriteMINER/DATA/AzuriteCORE.sh
 sudo chmod +x $HOME/AzuriteMINER/DATA/AzuriteCORE.sh
 sudo cp $HOME/AzuriteMINER/DATA/AzuriteCORE.sh $HOME/AzuriteMINER/TEMP/AzuriteCORE.sh.old
 sudo cp /etc/rc.local $HOME/AzuriteMINER/TEMP/rc.local.old
