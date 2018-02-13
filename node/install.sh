@@ -62,7 +62,7 @@ sudo make -j4
 
 echo "2/3"
 cd $HOME/AzuriteMINER/DATA/veriumMiner
-make -j2
+make -j1
 
 echo "3/3"
 cd $HOME/AzuriteMINER/DATA/cpuminer-multi
